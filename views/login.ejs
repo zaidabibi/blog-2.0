@@ -1,0 +1,136 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+
+
+<div class="jumbotron">
+<h2 class="text-center">Welcome to Bezbee Photography</h2>
+</div>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+<div id="id01" class="modal">
+
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html> -->
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+<title>Javascript Login Form Validation</title>
+<!-- Include CSS File Here -->
+<!-- <link rel="stylesheet" href="css/style.css"/> -->
+<!-- Include JS File Here -->
+<script src="js/login.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+     <div class="container-fluid backnav">
+        <div class="navbar-header">
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           </button>
+           <a class="navbar-brand" href="/"> <img src="images/beez.jpg" alt="" width="40px" height="39px"> </a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+           <ul class="nav navbar-nav">
+              <li><a href="/new">New Post</a></li>
+              <li><a href="/posts">Archive</a></li>
+              <li><a href="/contact">Contact</a></li>
+           </ul>
+           <!-- <ul class="nav navbar-nav navbar-right">
+              <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+           </ul> -->
+        </div>
+     </div>
+  </nav>
+  <div class="jumbotron">
+     <h1 class="text-center">Bezbee Photography</h1>
+     <p class="text-center">Welcome to Bezbee photography , Zaida!</p>
+     <div class="container">
+     <div class="main">
+     <form id="form_id" method="post" name="myform">
+     <label>User Name :</label>
+     <input type="text" name="username" id="username"/>
+     <label>Password :</label>
+     <input type="password" name="password" id="password"/>
+     <input type="button" value="Login" id="submit" onclick="validate()"/>
+     </form>
+     </div>
+     </div>
+  </div>
+
+<script>
+var attempt = 3; // Variable to count number of attempts.
+// Below function Executes on click of login button.
+function validate(){
+var username = document.getElementById("username").value;
+var password = document.getElementById("password").value;
+if ( username == "Zaida" && password == "Bezbee123"){
+alert ("Login successfully");
+
+window.location = "/"; // Redirecting to other page.
+return true;
+}
+else{
+attempt --;// Decrementing by one.
+alert("You have left "+attempt+" attempt;");
+// Disabling fields after 3 attempts.
+if( attempt == 0){
+document.getElementById("username").disabled = true;
+document.getElementById("password").disabled = true;
+document.getElementById("submit").disabled = true;
+return false;
+}
+}
+}
+</script>
+</body>
+</html>

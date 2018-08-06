@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+
+       <!--    bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+
+<!--    summernote  -->
+
+      <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-inverse">
+       <div class="container-fluid backnav">
+          <div class="navbar-header">
+             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             </button>
+             <a class="navbar-brand" href="/"> <img src="images/beez.jpg" alt="" width="40px" height="39px"> </a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+             <ul class="nav navbar-nav">
+                <li><a href="/new">New Post</a></li>
+                <li><a href="/posts">Archive</a></li>
+                <li><a href="/contact">Contact</a></li>
+             </ul>
+          </div>
+       </div>
+    </nav>
+    <div class="jumbotron">
+<h2 class="text-center">Thank you for staying in touch</h2>
+<p class="text-center">We appreciate you contacting us about Bezbee Photography. One of our colleagues will get back to you shortly.
+
+Have a great day!</p>
+    </div>
+    <section id="hire">
+
+
+        <form>
+    	      <div class="field name-box">
+    		        <input type="text" id="name" placeholder="Who Are You?"/>
+            		<label for="name">Name</label>
+    		        <span class="ss-icon">check</span>
+    	      </div>
+
+    	      <div class="field email-box">
+    		        <input type="text" id="email" placeholder="name@email.com"/>
+    		        <label for="email">Email</label>
+    		        <span class="ss-icon">check</span>
+    	      </div>
+
+    	      <div class="field msg-box">
+    		        <textarea id="msg" rows="4" placeholder="Your message goes here..."/></textarea>
+    		        <label for="msg">Message</label>
+    		        <span class="ss-icon">check</span>
+    	      </div>
+<br>
+<br>
+    	      <input class="button" type="submit" value="Send" />
+      </form>
+    </section>
+    <br>
+    <footer class="container-fluid bg-4 text-center ft">
+       <p>Created by Zaida Bibi Armien | <a href="#">2018</a></p>
+    </footer>
+
+<script>
+// Input Lock
+$('textarea').blur(function () {
+  $('#hire textarea').each(function () {
+      $this = $(this);
+      if ( this.value != '' ) {
+        $this.addClass('focused');
+        $('textarea + label + span').css({'opacity': 1});
+      }
+      else {
+        $this.removeClass('focused');
+        $('textarea + label + span').css({'opacity': 0});
+      }
+  });
+});
+
+$('#hire .field:first-child input').blur(function () {
+  $('#hire .field:first-child input').each(function () {
+      $this = $(this);
+      if ( this.value != '' ) {
+        $this.addClass('focused');
+        $('.field:first-child input + label + span').css({'opacity': 1});
+      }
+      else {
+        $this.removeClass('focused');
+        $('.field:first-child input + label + span').css({'opacity': 0});
+      }
+  });
+});
+
+$('#hire .field:nth-child(2) input').blur(function () {
+  $('#hire .field:nth-child(2) input').each(function () {
+      $this = $(this);
+      if ( this.value != '' ) {
+        $this.addClass('focused');
+        $('.field:nth-child(2) input + label + span').css({'opacity': 1});
+      }
+      else {
+        $this.removeClass('focused');
+        $('.field:nth-child(2) input + label + span').css({'opacity': 0});
+      }
+  });
+});
+</script>
+  </body>
+</html>

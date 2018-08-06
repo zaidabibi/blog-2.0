@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+
+       <!--    bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel='stylesheet' href='/stylesheets/style.css' />
+
+      <!-- <style>
+
+          img{
+              margin-left:25%;
+          }
+
+      </style> -->
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-inverse">
+       <div class="container-fluid backnav">
+          <div class="navbar-header">
+             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             </button>
+             <a class="navbar-brand" href="/"> <img src="images/beez.jpg" alt="" width="40px" height="39px"> </a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+             <ul class="nav navbar-nav">
+                <li><a href="/new">New Post</a></li>
+                <li><a href="/posts">Archive</a></li>
+                <li><a href="/contact">Contact</a></li>
+             </ul>
+          </div>
+       </div>
+    </nav>
+
+      <div class="container">
+
+        <br>
+        <br>
+        <h1>Archive</h1>
+
+
+
+        <div class="container-fluid post">
+          <% if (posts) { %>
+        	<% for(var i=0; i<5; i++) {%>
+            <div class="col-xs-12 col-md-6 col-lg-4">
+        	  <div class="card">
+        		<img class="card-img-top" src="<%=posts[i].image %>"  alt="Card image cap" width="100%" height="300px">
+        		<div class="card-body">
+        		  <h5 class="card-title text-center" ><%= posts[i].title %>  <a href="view/<%= posts[i].id %>"> <button class="btn btn-primary" type="button" name="button">
+         		  Read more</button></a></h5>
+              <br>
+
+
+        		</div>
+        	  </div>
+          </div>
+        	 <%}%>
+        	 <% } else { %>
+        		<p>You have no blog posts</p>
+        	 <% } %>
+
+        </div>
+
+        <footer class="container-fluid bg-4 text-center ft">
+           <p>Created by Zaida Bibi Armien | <a href="#">2018</a></p>
+        </footer>
+
+      </div>
+
+  </body>
+</html>
